@@ -8,8 +8,9 @@ Feature: Library app login feature
   Accounts are: librarian, student, admin
 
 
-  @librarian @employee
+  @librarian @employee @wip
   Scenario: Login as librarian
+    Given user is on the library login page
     When user enters librarian username
     And user enters librarian password
     Then user should see the dashboard
