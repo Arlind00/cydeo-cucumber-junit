@@ -8,7 +8,7 @@ Feature: Library app login feature
   Accounts are: librarian, student, admin
 
 
-  @librarian
+  @librarian @employee
   Scenario: Login as librarian
     When user enters librarian username
     And user enters librarian password
@@ -22,8 +22,9 @@ Feature: Library app login feature
     Then user should see the dashboard
 
 
-  @admin
+  @admin  @employee
   Scenario: Login as admin
     When users enters admin username
     And user enters admin password
     Then  user should see the dashboard
+    # used for adding comments
