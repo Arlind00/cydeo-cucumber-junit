@@ -6,7 +6,7 @@ import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeStep;
 
-public class Hooks {                // in this class we can pass pre & post-conditions to scenario and step
+public class Hooks {                // in this class we can pass pre & post-condition for scenario and step
 
 
     @Before(order = 0)                                      // import from  i.o. cucumber , java
@@ -21,7 +21,7 @@ public class Hooks {                // in this class we can pass pre & post-cond
     }
 
 
-    @Before (value = "@db", order = -1)
+    @Before (value = "@db", order = 2)
     public void setupForDatabaseScenarios(){
         System.out.println("====will apply to scenarios with @db tag");
     }
@@ -38,7 +38,6 @@ public class Hooks {                // in this class we can pass pre & post-cond
     public void setupStep(){
         System.out.println("--------- Applying setup using @BeforeStep--------");
     }
-
 
 
     @AfterStep
