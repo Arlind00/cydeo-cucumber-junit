@@ -1,48 +1,61 @@
 package com.cydeo.step_definitions;
 
 
-import io.cucumber.java.After;
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.Before;
-import io.cucumber.java.BeforeStep;
+import com.cydeo.utilities.Driver;
+import io.cucumber.java.*;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {                // in this class we can pass pre & post-condition for scenario and step
 
 
     @Before(order = 0)                                      // import from  i.o. cucumber , java
     public void setupScenario(){
-        System.out.println("======Setting up browser using cucumber @Before");
+      //  System.out.println("======Setting up browser using cucumber @Before");
     }
 
 
     @Before (value = "@login", order = 1)
     public void setupScenarioForLogin(){
-        System.out.println("====will apply to scenarios with @login tag");
+       // System.out.println("====will apply to scenarios with @login tag");
     }
 
 
     @Before (value = "@db", order = 2)
     public void setupForDatabaseScenarios(){
-        System.out.println("====will apply to scenarios with @db tag");
+      //  System.out.println("====will apply to scenarios with @db tag");
     }
 
 
     @After                                       // import from  i.o. cucumber , java
-    public void tearDown(){
-        System.out.println("======Closing browser using cucumber @After");
-        System.out.println("======Scenario ended, take screenshot if scenario failed");
+    public void tearDown(Scenario scenario){
+
+
+        if (scenario.isFailed()){                       // if scenario fails take screenshot and store it
+            byte[] screenshot = ((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.BYTES);        // takes screenshot
+            scenario.attach(screenshot,"image/png", scenario.getName());
+
+        }
+
+
+
+
+
+        Driver.closeDriver();
+        // System.out.println("======Closing browser using cucumber @After");
+        // System.out.println("======Scenario ended, take screenshot if scenario failed");
     }
 
 
     @BeforeStep
     public void setupStep(){
-        System.out.println("--------- Applying setup using @BeforeStep--------");
+      // System.out.println("--------- Applying setup using @BeforeStep--------");
     }
 
 
     @AfterStep
     public void afterStep(){
-        System.out.println("--------- applying teardown using @AfterStep-----");
+       // System.out.println("--------- applying teardown using @AfterStep-----");
     }
 
 
