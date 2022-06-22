@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",     // we pass features directories content root path
         glue = "com/cydeo/step_definitions",          // we pass source root of step-definitions folder
         dryRun = false,                               // turns off running step_definitions, just check for missing snippet,  when true= ON, when false = OFF
-        tags = "@wip"
+        tags = "@scenario2"
 
 )
 

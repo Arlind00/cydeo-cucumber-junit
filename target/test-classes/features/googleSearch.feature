@@ -19,14 +19,14 @@ Feature: Google search functionality
     When user types "apple" and clicks enter
     Then user sees "apple" in the google title
 
-
+  @wip
   Scenario: Data Driven Testing Format preparation
     Given user is on Google search page
     When user types "capital of Turkey" and clicks enter
     Then User should see "Ankara" in the result
 
 
-  @wip
+
   Scenario Outline: Search functionality in a Data Driven Testing Format
     Given user is on Google search page
     When user types "capital of <country>" and clicks enter
