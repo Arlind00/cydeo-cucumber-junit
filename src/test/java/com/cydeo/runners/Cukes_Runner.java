@@ -42,5 +42,4 @@ implementation regarding what should be happening when the code is ran.
 Ex: “User is on the login page”
  */    // task
 
-// 1. Create a feature file under file directory
-// 2. Write feature and scenario inside newly created file
+

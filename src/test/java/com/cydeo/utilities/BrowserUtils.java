@@ -59,4 +59,16 @@ Method info:
 
 
 }
+
+
+    // Accepts String as expected value and verifies if the current URL contains expected value
+    public static void verifyUrlContains(String expectedInURL){
+
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedInURL));
+
+    }
+
+
+
+
     }
