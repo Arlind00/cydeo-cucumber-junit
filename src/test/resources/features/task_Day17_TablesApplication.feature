@@ -11,7 +11,7 @@ Feature: User should be able to login using correct credentials
     And clicks to login button
     Then user should see url contains orders
 
-  @wip
+
   Scenario: login as tester
     Given user is at user login page
     When  user enters username "Test" password "Tester"and logins
