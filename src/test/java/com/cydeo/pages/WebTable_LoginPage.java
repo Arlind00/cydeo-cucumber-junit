@@ -6,10 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Task_day17_TableApplication {
+public class WebTable_LoginPage {
 
 
-    public Task_day17_TableApplication(){
+    public WebTable_LoginPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 

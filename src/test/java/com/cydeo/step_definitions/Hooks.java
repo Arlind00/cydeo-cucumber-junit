@@ -1,6 +1,7 @@
 package com.cydeo.step_definitions;
 
 
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
@@ -37,9 +38,7 @@ public class Hooks {                // in this class we can pass pre & post-cond
 
         }
 
-
-
-
+       // BrowserUtils.sleep(5);
 
         Driver.closeDriver();
         // System.out.println("======Closing browser using cucumber @After");

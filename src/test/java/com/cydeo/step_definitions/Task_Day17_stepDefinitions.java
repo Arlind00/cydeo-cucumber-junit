@@ -1,18 +1,18 @@
 package com.cydeo.step_definitions;
 
-import com.cydeo.pages.Task_day17_TableApplication;
+import com.cydeo.pages.WebTable_LoginPage;
 import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
-import org.openqa.selenium.support.PageFactory;
+
+import java.util.Map;
 
 public class Task_Day17_stepDefinitions {
 
-    Task_day17_TableApplication task_day17_tableApplication = new Task_day17_TableApplication();
+    WebTable_LoginPage web_tableLoginPage = new WebTable_LoginPage();
 
 
     @When("user is at user login page")
@@ -24,19 +24,19 @@ public class Task_Day17_stepDefinitions {
 
     @When("user enters username as {string}")
     public void user_enters_username_as(String string) {
-        task_day17_tableApplication.usernameBox.sendKeys(string);
+        web_tableLoginPage.usernameBox.sendKeys(string);
     }
 
 
     @When("user enters password as {string}")
     public void user_enters_password_as(String string) {
-        task_day17_tableApplication.passwordBox.sendKeys(string);
+        web_tableLoginPage.passwordBox.sendKeys(string);
     }
 
 
     @And("clicks to login button")
     public void clicksToLoginButton() {
-        task_day17_tableApplication.loginButton.click();
+        web_tableLoginPage.loginButton.click();
     }
 
 
@@ -45,9 +45,18 @@ public class Task_Day17_stepDefinitions {
         BrowserUtils.verifyUrlContains("orders");
     }
 
-    @When("user enters username {string} password {string}and logins")                      // three anotation functions into one
+    @When("user enters username {string} password {string}and logins")                      // three annotation functions into one
     public void userEntersUsernamePasswordAndLogins(String username, String password) {
 
-        task_day17_tableApplication.login(username, password);                              // we created a method on Page class
+        web_tableLoginPage.login(username, password);                              // we created a method on Page class
+    }
+
+
+
+
+    @When("User enters below credentials")
+    public void user_enters_below_credentials(Map<String,String> credentials) {
+
+        web_tableLoginPage.login(credentials.get("username"), credentials.get("password"));        // login method that we created
     }
 }
