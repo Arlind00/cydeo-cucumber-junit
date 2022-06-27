@@ -42,7 +42,7 @@ Feature: Web table user order feature
     @MaleScientists
     Examples: Famous male scientists
       | productType | quantity | customerName    | street    | city   | state   | zipcode | creditCardType | creditCardNo      | expiringDate | expectedName    |
-      | MoneyCog    | 2        | Nicola Tesla    | London st | London | England | 50505   | Visa           | 11122233344455566 | 12/13        | Nicola Tesla    |
+      | MoneyCog    | 2        | Invalid Name    | London st | London | England | 50505   | Visa           | 11122233344455566 | 12/13        | Nicola Tesla    |
       | MoneyCog    | 3        | Albert Einstein | London st | London | England | 50505   | Visa           | 11122233344455566 | 12/13        | Albert Einstein |
-      | MoneyCog    | 4        | Galileo         | London st | London | England | 50505   | Visa           | 11122233344455566 | 12/13        | Galileo         |
+      | MoneyCog    | 4        | Palileo         | London st | London | England | 50505   | Visa           | 11122233344455566 | 12/13        | Galileo         |
       | MoneyCog    | 5        | Isac Newton     | London st | London | England | 50505   | Visa           | 11122233344455566 | 12/13        | Isac Newton     |
